@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <input id="todoInput" type="text" placeholder="New todo">
+    <button id="addButton">Add</button>
+    <ul id="todoList"></ul>
+
+    <script>
+        $(function () {
+            const API_URL = 'http://localhost:3001/todos';
+
+            $('#addButton').click(function () {
+                let value = $('#todoInput').val();
+                // if value retrived from the input field is not empty
+                // send a POST request to the API through JSON FORMAT with TITLE PROPERTY extracted from the input field
+                //upon SUCCESS, call ADDITEM FUNCTION and clear the input field
+                if (value) {
+                    $.ajax({
+                        url: API_URL,
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ title: value }),
+                        success: function (data) {
+                            addItem(data);
+                            $('#todoInput').val('');
+                        }
+                    });
+                }
+            });
+
+            function addItem(todo) {
+                // 1. creates NEW <li> 
+                // 2. sets its text content to the TITLE OF THE TODO ITEM
+                // 3. sets ID ATTRIBUTE of the list item to the ID OF THE TODO ITEM
+                let item = $('<li>').text(todo.title).attr('id', todo.id);
+
+                const removeButton = $('<button>').text('Remove');
+                //sends DELETE request to the API with spcified ID
+                //upon SUCCESS removes the corresponding item.
+                removeButton.click(function () {
+                    $.ajax({
+                        url: API_URL + '/' + todo.id,
+                        method: 'DELETE',
+                        success: function () {
+                            item.remove();
+                        }
+                    });
+                });
+
+                item.append(removeButton);
+
+                $('#todoList').append(item);
+            }
+
+            $.ajax({
+                url: API_URL,
+                method: 'GET',
+                success: function (data) {
+                    $.each(data, function (i, todo) {
+                        addItem(todo);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

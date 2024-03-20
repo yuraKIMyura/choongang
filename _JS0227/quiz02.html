@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz</title>
+  </head>
+  <body>
+
+    <div id="timestable"></div>
+
+    <script>
+      let tt = document.querySelector('#timestable');
+      let content ="";
+      content += "<table><tr>";
+    
+      for (let i = 2; i < 10; i++) {
+        content += "<tr>"; 
+        for (let j = 1; j <= 10; j++) {
+          content += `<td> ${i}*${j}=${i*j}</td>`;
+        }
+        content += "</tr>";
+      }
+    
+      content += "</table>";
+      tt.innerHTML = content;
+    </script>
+
+  
+  </body>
+</html>

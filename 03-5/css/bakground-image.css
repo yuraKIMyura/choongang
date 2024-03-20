@@ -1,0 +1,40 @@
+section#section1{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-image: url(../img/pattern.png);
+    
+    /* x축, y축 기준 반복 */
+    /* 아래줄의 코드가 생성 */
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    
+    /* 이 코드 없으면 위의 y축 기준 적용됨 */
+    background-repeat: no-repeat;
+    /* 정가운데 한 번 */
+    background-position: center center;
+    background-position: right bottom;
+    background-position: 20px 60px;
+    background-position: 100% 50%;
+
+    /* 반복해서 전체 채우기 */
+    background-repeat: repeat;
+}
+
+section#section2{
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    background-image: url(../img/rose.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* contain: 이미지 잘리지 않도록 원래 비율 유지 */
+    /* cover: 이미지 잘려도 가득 차도록 설정 */
+    background-size: contain;
+    background-size: cover;
+}
+
+section#section2:hover{
+    filter: blur(1px);
+    border: 3px solid orangered;
+}

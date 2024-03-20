@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<button onclick="moveRight()">오른쪽으로</button>
+
+	<!-- absolute로 특정요소 위치를 변경하기 -->
+	<div class="wrap">
+		<div class="left">
+		</div>
+
+		<div class="right">
+			<p class="box" onclick="moveBox()"></p>
+		</div>
+
+		<div class="bottom">
+		</div>
+	</div>
+
+
+
+	<script>
+
+		let isMoved = false;
+		function moveBox(){
+			let rightDiv = document.querySelector('.wrap .right');
+		let box = document.querySelector('.box').style;
+			if (!isMoved) {
+				rightDiv.style.position = 'relative';
+				box.backgroundColor = 'green';
+				box.position = 'absolute';
+				box.right = '20px';
+				box.bottom = '30px';
+			} else {
+				rightDiv.style.position = '';
+				box.backgroundColor = '';
+				box.position = '';
+				box.right = '';
+				box.bottom = '';
+				
+			}
+			
+			isMoved = !isMoved;
+			console.log(isMoved);
+			console.log(box.right);
+		}
+	
+		let i = 0;
+		let isRightSet = false;
+		function moveRight() {
+
+			let div = document.querySelector('.box').style;
+			div.position = 'absolute';
+
+			let rightDiv = document.querySelector('.wrap .right').style;
+			rightDiv.position = 'relative';
+	
+			
+			if(isMoved){
+				isRightSet = true;
+				div.right = '20px';
+				
+			} else {
+				isRightSet = false;
+				div.right = '';
+			}
+
+			i -= 10;
+			div.right = ((isRightSet ? 20 : 300)+i) + 'px';	
+
+
+			console.log("isMoved " + isMoved);
+			console.log("isRightSet " + isRightSet);
+			console.log(div.right);
+
+
+		}
+
+	</script>
+</body>
+</html>

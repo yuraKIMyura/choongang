@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1 id="title">안녕</h1>
+    <button onclick="clickButton()">클릭</button>
+
+    <div id="title2"><p>hello darkness my old friend</p></div>
+
+
+    <script>
+        function clickButton(){
+            console.log("버튼이 클릭되었습니다.");
+            const title = document.querySelector('#title');
+            title.textContent = "만나서 반가워";
+            title2.innerHTML = "<h1>hello darkness my old friend</h1>";
+        }
+
+        const title2 = document.querySelector('#title2');
+        console.log(title2);
+        console.log("textContent: " + title2.textContent);
+        console.log("innerHTML: " + title2.innerHTML);
+        console.log("innerText: " + title2.innerText);
+
+        // document.write("Hello World");
+        // alert("Hello World");
+        // console.log("Hello World");
+    </script>
+</body>
+</html>

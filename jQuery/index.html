@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <p>연습문장입니다.</p>
+    <button>클릭</button>
+    
+    <script>
+        $(document).ready(function(){
+            let isClicked = false;
+            $("button").click(function(){
+                isClicked = !isClicked;
+                if(isClicked) {
+                    $("p").hide();
+                } else {
+                    $("p").show();
+                }
+                
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

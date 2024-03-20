@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz04</title>
+  </head>
+  <body>
+
+    <form>
+        <label>첫번째정수</label><input type="text" id="first">
+        <label>두번째정수</label><input type="text" id="second">
+        <button onclick=calculateForm()>계산</button> 
+    </form>
+
+    <script>
+        function calculateForm(){
+            let input1 = parseInt(document.querySelector('#first').value);
+            let input2 = parseInt(document.querySelector('#second').value);
+            let inputResult = input1 + input2;
+            document.write(inputResult);
+        }
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>  
+
+<div id="app">
+    <p>{{teaList}}</p>
+    <p>{{message}}</p>
+    <p>{{message[0].name}} {{message[0].price}}원</p>
+    <hr>
+    <p v-for="tea in message"> {{tea.name}} {{tea.price}}원</p>
+</div>
+
+
+<script>
+
+    const teaList=[
+        {name: '다즐링', price: 6000},
+        {name: '얼그레이', price: 5000},
+        {name: '실론', price: 5000}
+    ];
+
+    new Vue({
+        el: '#app'
+        , data: {
+            message: teaList
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic Table</title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="이름">
+    <input type="text" id="email" placeholder="이메일">
+    
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </table>
+
+    <button onclick="addRow()">Add Row</button>
+
+    <script>
+        function addRow(){
+            let table = document.querySelector('#myTable');
+
+            let row = document.createElement("tr");
+            let cell1 = document.createElement("td");
+            let cell2 = document.createElement("td");
+
+            cell1.textContent = document.querySelector('#name').value;
+            cell2.textContent = document.querySelector('#email').value;
+
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+
+            table.appendChild(row);
+
+            document.querySelector('#name').value = '';
+            document.querySelector('#email').value = '';
+         }
+    </script>
+
+</body>
+</html>

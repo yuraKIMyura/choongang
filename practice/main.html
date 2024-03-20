@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>main</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <a href="yuraIndex.html"> <button class="mainButton"> let's go </button> </a> 
+    <br>
+
+    <script>
+
+        document.write("0. 1부터 10까지의 합: ");
+        let sum = 0;
+        for(let i=1; i<11; i++) {
+            sum += i;
+        }
+        document.write("<br>"); 
+        document.write(sum);
+        document.write("<br>"); 
+
+        document.write("<br>");
+        document.write("1. 구구단 프로그램의 단을 입력받아 구구단 출력: comment out 필요");
+        // let num = prompt("2이상, 9이하의 정수를 입력해주세요.");
+        // document.write("<table>");           
+        //         document.write("<tr>");
+        //         for(let j=1; j<10; j++){
+        //             document.write("<td>");
+        //             document.write(num+"x"+j+"="+num*j+"&nbsp;");
+        //             document.write("</td>");
+        //     }
+        //     document.write("</tr>");            
+        // document.write("</table>");
+
+        document.write("<br>");
+        
+        document.write("<br>");
+        document.write("2. 5명의 점수를 입력 받아 성적 출력");
+        document.write("<br>");
+        for(let i=1; i<6; i++){
+            document.write(i+") ");
+            let point = prompt ("0에서 100점까지 입력");
+            switch(Math.floor(point/10)){
+                case 10:
+                case 9:
+                    alert("A");
+                    document.write(point + " is an A <br>");
+                    break;
+                case 8:
+                    alert("B");
+                    document.write(point + " is a B <br>");
+                    break;
+                case 7:
+                    alert("C");
+                    document.write(point + " is a C <br>");
+                    break;
+                case 6: case 5: case 4: case 3: case 2: case 1: case 0:
+                    alert("F");
+                    document.write(point + " is an F <br>");
+                    break;
+                default:
+                    alert("undefined");
+                    document.write(point + " is undefined <br>");
+                    break;            
+            }
+        }
+
+        document.write("<br>");
+        document.write("3. 2의 배수");
+        for(let i=1; i<101; i++) {
+            if (i%2==0){
+                document.write(i + "&nbsp;");
+            }
+        }
+        document.write("<br>");    
+
+        document.write("<br>");
+        document.write("4. 3의 배수");
+        for(let i=1; i<101; i++) {
+            if (i%3==0){
+                document.write(i + "&nbsp;");
+            }
+        }
+
+        document.write("<hr>")
+
+
+        var x = 100;
+        document.write("hello" + "<br/>" + x + "<br/>");
+        x += 1;
+        document.write(x + "<br/>");
+        ++x;
+        document.write(x +  "<br/>");
+        x++;
+        document.write(x + "<br/>");
+
+        // let num = prompt("10보다 작은 정수를 입력해주세요");
+        // document.write("<br>");
+        // document.write("니가 고른 숫자는 "+num+"니까 "+num+"단을 출력하겠다");
+        // document.write("<br>");    
+
+        // for(; num<10; num=num+1){
+        //     for(let j=1; j<10; j=j+1){
+        //         document.write(num*j);
+        //         document.write(" ");
+        //     }
+        //     document.write("<br>");
+        // }
+        
+        document.write("<br>");
+
+        document.write("구구단표 가로 <br>");
+        document.write("<table>");
+           
+            for(let i=2; i<10; i++){
+                document.write("<tr>");
+                for(let j=1; j<10; j++){
+                    document.write("<td>");
+                    document.write(i+"x"+j+"="+i*j+"&nbsp;");
+                    document.write("</td>");
+            }
+            document.write("</tr>");            
+            }
+        document.write("</table>");
+
+        document.write("<br>");
+
+        document.write("구구단표 세로 <br>");
+        document.write("<table>");           
+            for(let i=1; i<10; i++){
+                document.write("<tr>");
+                for(let j=2; j<10; j++){
+                    document.write("<td>");
+                    document.write(j+"x"+i+"="+i*j+"&nbsp;");
+                    document.write("</td>");
+            }
+            document.write("</tr>");            
+            }
+        document.write("</table>");
+
+        
+        
+    </script>
+
+</body>
+</html>

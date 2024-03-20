@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icon.png"> </link>
+    <title>YuraKim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:antiquewhite">
+
+<div class="bookmark"><a href="#bottom" id="top"><img class="arrow" src="down.png"></a></div>
+
+    <a href="main.html"> to main </a>
+
+    <h1 style="font-size: 50px;">Font-size applied Heading</h1>
+    <h1>Normal h1 Heading</h1>
+    <p>paragraph normal</p>
+    <p><b>paragraph bold</b></p>
+    <p><del>redacted</del> with <b>&lt;del&gt;</b> tag</p>
+    <p><ins>underline</ins> with <b>&lt;ins&gt;</b> tag</p>
+    <p>H<sub>2</sub>O with <b>&lt;sub&gt;</b> tag</p>
+    <p>E=mc<sup>2</sup> with <b>&lt;sup&gt;</b> tag</p>
+    
+    <hr/>
+    
+        <ol>
+            <li>
+                <a href="click.html" target="_blank"> <button>CLICK ME</button></a>
+            </li>
+            <li>
+                <h3 style="color: tomato; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">area tag</h3>
+                <p>하나의 이미지에 대해서 좌표를 설정해 클릭 영역을 만들 수 있음</p>
+                <p>시금치, 계란말이, 밥, 김치찌개, 김 총 5부분 클릭 가능</p>
+                <p>계란말이, 김, 밥 클릭 시에는 JavaScript onclick 이벤트 발생</p>
+                <img src="./김치찌개.jpg" alt="김치찌개" width="400" height="300" usemap="
+                #food">
+                <map name="food">
+                    <area shape="circle" coords="200,150,100" href="kimchi.html" target="_blank" title="김치찌개 페이지로 이동">
+                    <area shape="circle" coords="0,150,50" href="spinach.html" target="_top" title="시금치 페이지로 이동">
+                    <area shape="rectangle" coords="0,200,100,300" href="eggroll.html" onclick="showMessage('eggroll')">
+                    <area shape="circle" coords="400,50,50" href="kim.html" onclick="showMessage('kim')">
+                    <area shape="circle" coords="300,0,70" href="rice.html" onclick="showMessage('rice')">
+                </map>
+            </li>
+            <li>
+                <h3>title 속성, q tag</h3>
+    <p title="이것은 부가메시지"><q>작동</q>한다! 마우스오버하면 메시지 뜬다!</p>
+            </li>
+            <li>
+                <h3>abbr tag: title 속성값 입력 필요</h3>
+    <abbr title="abb is short for abbreviation"> abb </abbr>
+            </li>
+            <li>
+                <h3>address tag</h3>
+                <address> 서울시 서대문구 이화길 </address>
+            </li>
+            <li>
+                <h3>cite tag</h3>
+                <p>안톤 체호프의 <cite>갈매기</cite>를 인용했다. </p>
+            </li>
+            <li>
+                <h3>bdo tag: dir 속성값 입력 필요(ltr or rtl)</h3>
+                <bdo dir="rtl">재미있는 tag를 발견했다. </bdo>
+            </li>
+
+        </ol>
+
+<div class="bookmark"><a href="#top" id="bottom"><img class="arrow" src="up.png"></a></div>
+
+<script>
+    function showMessage(menu) {
+        let message;
+        console.log("clicked");
+        switch(menu) {
+            case 'eggroll':
+                message="계란말이를 클릭했습니다";
+                break;
+            case 'kim':
+                message="김을 클릭했습니다";
+                break;
+            case 'rice':
+                message="밥을 클릭했습니다";
+                break;
+            default:
+                message="오류";
+        }
+        alert(message)
+    }
+</script>
+
+</body>
+</html>

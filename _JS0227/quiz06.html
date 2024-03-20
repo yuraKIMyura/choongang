@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz06</title>
+
+    <style>
+      div{
+        width: 250px;
+        height: 250px;
+        background-color: black;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        padding: 20px;    
+        margin: 10px;
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+
+   
+    <button onclick=toggle()> 전원 버튼 </button>
+    <div id="result"> <img src="light-bulb2.png"> </div>
+
+
+    <script>  
+       let isOn = false;
+        function toggle(){
+            isOn = !isOn;
+            document.querySelector("img").src = isOn ? "light-bulb1.png" : "light-bulb2.png";
+            document.querySelector("div").style = isOn ? "background-color: yellow" : "background-color: black";
+          }
+        
+
+    </script>
+
+
+  </body>
+</html>
